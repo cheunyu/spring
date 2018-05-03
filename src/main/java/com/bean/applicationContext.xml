@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 实例化bean:构造方法 -->
+    <bean id="user1" class="com.bean.User1"></bean>
+
+    <!-- 实例化bean:静态工厂 -->
+    <bean id="user2" class="com.bean.StaticFactory" factory-method="getInstance" />
+
+    <!-- 实例化bean:实例工厂 -->
+    <bean id="factory" class="com.bean.InstanceFactory"/>
+    <bean id="user3" factory-bean="factory" factory-method="getUser3"/>
+</beans>
