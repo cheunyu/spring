@@ -16,7 +16,12 @@ public class App {
         String xmlPath = "com/annotation/applicationContext.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
         UserAction userAction = (UserAction) ctx.getBean("userAction");
+        UserAction userAction1 = (UserAction) ctx.getBean("userAction");
         userAction.execute();
+        System.out.println(userAction);
+        System.out.println(userAction1);
+        ((ClassPathXmlApplicationContext) ctx).close();
     }
+
 
 }
