@@ -1,5 +1,6 @@
-package com.di;
+package com.di.pnamespace;
 
+import com.di.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,9 +11,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) {
-        String xmlPath = "com/di/applicationContext.xml";
+        String xmlPath = "com/di/pnamespace/applicationContext.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
-        Student student = (Student) ctx.getBean("student");
-        System.out.println(student.toString());
+        //set注命名空间
+        Person person = (Person) ctx.getBean("person");
+        System.out.println(person.toString());
     }
 }

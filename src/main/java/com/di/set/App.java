@@ -1,4 +1,4 @@
-package com.di;
+package com.di.set;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,9 +10,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) {
-        String xmlPath = "com/di/applicationContext.xml";
+        String xmlPath = "com/di/set/applicationContext.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
-        Student student = (Student) ctx.getBean("student");
-        System.out.println(student.toString());
+        //set注入
+        Person person = (Person) ctx.getBean("person");
+        System.out.println(person.toString());
     }
 }

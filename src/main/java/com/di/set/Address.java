@@ -1,4 +1,4 @@
-package com.di;
+package com.di.set;
 
 /**
  * @author:cheunyu
