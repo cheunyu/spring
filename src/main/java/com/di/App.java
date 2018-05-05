@@ -14,5 +14,8 @@ public class App {
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
         Student student = (Student) ctx.getBean("student");
         System.out.println(student.toString());
+        //set注入
+        Person person = (Person) ctx.getBean("person");
+        System.out.println(person.toString());
     }
 }

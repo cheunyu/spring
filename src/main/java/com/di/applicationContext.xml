@@ -9,4 +9,25 @@
         <constructor-arg value="21" index="1"></constructor-arg>
         <constructor-arg value="male" index="2"></constructor-arg>
     </bean>
+
+    <!-- set注入 -->
+    <bean id="person" class="com.di.Person">
+        <property name="name" value="Panda"></property>
+        <property name="age">
+            <value>22</value>
+        </property>
+        <property name="companyAddr" ref="companyAddr"></property>
+        <property name="homeAddr">
+            <ref bean="homeAddr"></ref>
+        </property>
+    </bean>
+
+    <bean id="homeAddr" class="com.di.Address">
+        <property name="addr" value="家庭地址"></property>
+        <property name="phoneNum" value="1300000000"></property>
+    </bean>
+    <bean id="companyAddr" class="com.di.Address">
+        <property name="addr" value="公司地址"></property>
+        <property name="phoneNum" value="1311111111"></property>
+    </bean>
 </beans>
