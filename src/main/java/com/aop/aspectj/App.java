@@ -1,4 +1,4 @@
-package com.aop.auto;
+package com.aop.aspectj;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) {
-        String xmlPath = "/com/aop/auto/applicationContext.xml";
+        String xmlPath = "/com/aop/aspectj/applicationContext.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
         IUserService userServiceImpl = (IUserService) ctx.getBean("userServiceImpl");
         userServiceImpl.addUser();

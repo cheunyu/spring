@@ -7,13 +7,13 @@
                             http://www.springframework.org/schema/aop
                             http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 目标类 -->
-    <bean id="userServiceImpl" class="com.aop.auto.UserServiceImpl"></bean>
+    <bean id="userServiceImpl" class="com.aop.aopalliance.UserServiceImpl"></bean>
     <!-- 切面类 -->
-    <bean id="aspect" class="com.aop.auto.Aspect"></bean>
+    <bean id="aspect" class="com.aop.aopalliance.Aspect"></bean>
     <!-- aop -->
     <aop:config>
         <!-- 切入点 -->
-        <aop:pointcut id="pointCut" expression="execution(* com.aop.auto..*.*(..))"></aop:pointcut>
+        <aop:pointcut id="pointCut" expression="execution(* com.aop.aopalliance..*.*(..))"></aop:pointcut>
         <!-- 通知引用，切入点引用 -->
         <aop:advisor advice-ref="aspect" pointcut-ref="pointCut"></aop:advisor>
     </aop:config>

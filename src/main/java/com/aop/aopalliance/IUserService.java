@@ -1,4 +1,4 @@
-package com.aop.auto;
+package com.aop.aopalliance;
 
 public interface IUserService {
 

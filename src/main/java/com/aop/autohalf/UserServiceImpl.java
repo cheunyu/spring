@@ -1,4 +1,4 @@
-package com.aop.spring;
+package com.aop.autohalf;
 
 /**
  * @author:cheunyu
@@ -8,16 +8,16 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void addUser() {
-        System.out.println("addUser");
+        System.out.println("addUser 方法");
     }
 
     @Override
     public void deleteUser() {
-        System.out.println("deleteUser");
+        System.out.println("deleteUser 方法");
     }
 
     @Override
     public void findUser() {
-        System.out.println("findUser");
+        System.out.println("findUser 方法");
     }
 }
