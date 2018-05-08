@@ -1,6 +1,9 @@
 package com.jdbctemplate.spring;
 
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+
+import java.util.List;
 
 /**
  * @author:cheunyu
@@ -32,7 +35,8 @@ public class UserDaoImpl implements IUserDao{
     }
 
     @Override
-    public User queryUser() {
-        return null;
+    public List<User> findAll() {
+        return jdbcTemplate.query("select * from user", new BeanPropertyRowMapper<User>(User.class));
     }
+
 }

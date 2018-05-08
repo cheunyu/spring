@@ -1,4 +1,4 @@
-package com.jdbctemplate.spring;
+package com.jdbctemplate.jdbcdaosupport;
 
 import java.util.List;
 

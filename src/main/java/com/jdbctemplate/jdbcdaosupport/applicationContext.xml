@@ -19,11 +19,7 @@
         <property name="password" value="qwe123"></property>
     </bean>
 
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <bean id="userDaoImpl" class="com.jdbctemplate.jdbcdaosupport.UserDaoImpl">
         <property name="dataSource" ref="dataSourceC3P0"></property>
-    </bean>
-
-    <bean id="userDaoImpl" class="com.jdbctemplate.spring.UserDaoImpl">
-        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
 </beans>

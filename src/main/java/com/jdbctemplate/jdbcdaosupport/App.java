@@ -1,4 +1,4 @@
-package com.jdbctemplate.spring;
+package com.jdbctemplate.jdbcdaosupport;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,12 +13,13 @@ public class App {
 
     public static void main(String[] args) {
         User user = new User();
-        user.setId(1);
+        user.setId(2);
         user.setName("Panda");
-        user.setPassword("qwer12345");
-        String xmlPath = "com/jdbctemplate/spring/applicationContext.xml";
+        user.setPassword("1111");
+        String xmlPath = "com/jdbctemplate/jdbcdaosupport/applicationContext.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
         IUserDao userDaoImpl = (IUserDao) ctx.getBean("userDaoImpl");
+        userDaoImpl.addUser(user);
 //        userDaoImpl.updateUser(user);
         List<User> userList = userDaoImpl.findAll();
         for (User userdb: userList) {
