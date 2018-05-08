@@ -13,7 +13,7 @@ public class App {
         User user = new User();
         user.setId(1);
         user.setName("Panda");
-        user.setPassword("qwer1234");
+        user.setPassword("qwer12345");
         String xmlPath = "com/jdbctemplate/spring/applicationContext.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
         IUserDao userDaoImpl = (IUserDao) ctx.getBean("userDaoImpl");
