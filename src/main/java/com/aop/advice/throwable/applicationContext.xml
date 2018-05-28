@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 抛出异常增强 -->
+    <bean id="transactionManager" class="com.aop.advice.throwable.TransactionManager"></bean>
+    <!-- 目标类 -->
+    <bean id="forumServiceTarget" class="com.aop.advice.throwable.ForumService"></bean>
+
+    <bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interceptorNames" value="transactionManager"></property>
+        <property name="target" ref="forumServiceTarget"></property>
+        <property name="proxyTargetClass" value="true"></property>
+    </bean>
+</beans>
