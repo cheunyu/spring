@@ -14,7 +14,7 @@ public class App {
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
         IUserService userServiceImpl = (IUserService) ctx.getBean("proxyUserService");
         userServiceImpl.addUser();
-        userServiceImpl.deleteUser();
-        userServiceImpl.findUser();
+//        userServiceImpl.deleteUser();
+//        userServiceImpl.findUser();
     }
 }

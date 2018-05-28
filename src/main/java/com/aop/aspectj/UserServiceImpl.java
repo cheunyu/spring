@@ -14,7 +14,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void findUser() {
         System.out.println("find user");
-        int i = 1/0;
+//        int i = 1/0;
     }
 
     @Override
