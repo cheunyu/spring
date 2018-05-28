@@ -1,4 +1,4 @@
-package com.aop.advice;
+package com.aop.advice.before;
 
 public interface Waiter {
 

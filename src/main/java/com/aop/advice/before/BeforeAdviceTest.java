@@ -1,4 +1,4 @@
-package com.aop.advice;
+package com.aop.advice.before;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.BeforeAdvice;
@@ -20,6 +20,8 @@ public class BeforeAdviceTest {
         proxyFactory.setTarget(target);
         //为代理目标添加增强
         proxyFactory.addAdvice(advice);
+        //启用优化代理方式，使用CglibAopProxy
+        proxyFactory.setOptimize(true);
         //生成代理实例
         Waiter proxy = (Waiter) proxyFactory.getProxy();
         proxy.greetTo("John");
