@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 目标类 -->
+    <bean id="waiterTarget" class="com.aop.autoproxy.defaultadvisorautoproxycreator.Waiter"></bean>
+    <!-- 目标类 -->
+    <bean id="sellerTarget" class="com.aop.autoproxy.defaultadvisorautoproxycreator.Seller"></bean>
+    <!-- 增强类 -->
+    <bean id="greetingAdvice" class="com.aop.autoproxy.defaultadvisorautoproxycreator.GreetingBeforeAdvice"></bean>
+
+    <bean id="regexpAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="patterns" value=".*greet.*"></property> <!-- 通配符匹配需要代理的目标类Bean -->
+        <property name="advice" ref="greetingAdvice"></property>
+    </bean>
+
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean>
+</beans>
