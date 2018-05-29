@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 目标类 -->
+    <bean id="waiterTarget" class="com.aop.advisor.composable.Waiter"></bean>
+    <!-- 增强类 -->
+    <bean id="greetingAdvice" class="com.aop.advisor.composable.GreetingBeforeAdvice"></bean>
+
+    <bean id="gcp" class="com.aop.advisor.composable.GreetingComposablePointcut"></bean>
+
+    <bean id="composableAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="pointcut" value="#{gcp.intersectionPointcut}"></property> <!-- 引用gcp.getIntersectionPointcut()方法所返回的复合切点 -->
+        <property name="advice" ref="greetingAdvice"></property>
+    </bean>
+
+    <bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interceptorNames" value="composableAdvisor"></property> <!-- 使用复合切点切面 -->
+        <property name="proxyTargetClass" value="true"></property>
+        <property name="target" ref="waiterTarget"></property>
+    </bean>
+</beans>
