@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 目标类 -->
+    <bean id="waiterTarget" class="com.aop.advisor.controlflow.Waiter"></bean>
+    <!-- 增强类 -->
+    <bean id="greetingAdvice" class="com.aop.advisor.controlflow.GreetingBeforeAdvice"></bean>
+
+    <bean id="controlFlowPointcut" class="org.springframework.aop.support.ControlFlowPointcut">
+        <constructor-arg type="java.lang.Class" value="com.aop.advisor.controlflow.WaiterDelegate"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="service"></constructor-arg>
+    </bean>
+
+    <bean id="controlFlowAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="pointcut" ref="controlFlowPointcut"></property>
+        <property name="advice" ref="greetingAdvice"></property>
+    </bean>
+
+    <bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interceptorNames" value="controlFlowAdvisor"></property>
+        <property name="proxyTargetClass" value="true"></property>
+        <property name="target" ref="waiterTarget"></property>
+    </bean>
+</beans>
