@@ -1,4 +1,4 @@
-package com.aop.aspectjbook.config;
+package com.aop.aspectjbook.aspectj_annotation;
 
 public interface Waiter {
 

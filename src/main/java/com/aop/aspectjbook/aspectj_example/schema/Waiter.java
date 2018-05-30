@@ -1,4 +1,4 @@
-package com.aop.aspectjbook.javacode;
+package com.aop.aspectjbook.aspectj_example.schema;
 
 public interface Waiter {
 

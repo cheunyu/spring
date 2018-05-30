@@ -8,6 +8,6 @@
                             http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 基于@AspectJ切面的驱动器 -->
     <aop:aspectj-autoproxy/>
-    <bean id="waiter" class="com.aop.aspectjbook.schema.NavieWaiter"></bean>
-    <bean class="com.aop.aspectjbook.config.PreGreetingAspect"></bean>
+    <bean id="waiter" class="com.aop.aspectjbook.aspectj_example.schema.NavieWaiter"></bean>
+    <bean class="com.aop.aspectjbook.aspectj_example.config.PreGreetingAspect"></bean>
 </beans>

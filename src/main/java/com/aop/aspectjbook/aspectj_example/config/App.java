@@ -1,4 +1,4 @@
-package com.aop.aspectjbook.schema;
+package com.aop.aspectjbook.aspectj_example.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +12,7 @@ public class App {
 
     @Test
     public void before() {
-        String xmlPath = "/com/aop/aspectjbook/schema/applicationContext.xml";
+        String xmlPath = "/com/aop/aspectjbook/aspectj_example/config/applicationContext.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
         Waiter waiter = (Waiter) ctx.getBean("waiter");
         waiter.greetTo("Panda");

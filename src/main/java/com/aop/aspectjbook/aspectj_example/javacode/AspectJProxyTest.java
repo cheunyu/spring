@@ -1,4 +1,4 @@
-package com.aop.aspectjbook.javacode;
+package com.aop.aspectjbook.aspectj_example.javacode;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;

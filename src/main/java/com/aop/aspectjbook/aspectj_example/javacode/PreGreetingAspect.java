@@ -1,4 +1,4 @@
-package com.aop.aspectjbook.config;
+package com.aop.aspectjbook.aspectj_example.javacode;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

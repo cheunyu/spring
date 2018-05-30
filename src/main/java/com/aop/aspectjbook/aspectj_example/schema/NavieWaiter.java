@@ -1,4 +1,4 @@
-package com.aop.aspectjbook.schema;
+package com.aop.aspectjbook.aspectj_example.schema;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.aop.aspectjbook.config;
+package com.aop.aspectjbook.aspectj_annotation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -12,10 +12,11 @@ public class App {
 
     @Test
     public void before() {
-        String xmlPath = "/com/aop/aspectjbook/config/applicationContext.xml";
+        String xmlPath = "/com/aop/aspectjbook/aspectj_annotation/applicationContext.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(xmlPath);
-        Waiter waiter = (Waiter) ctx.getBean("waiter");
-        waiter.greetTo("Panda");
-        waiter.serveTo("foo");
+        Waiter naiveWaiter = (Waiter) ctx.getBean("naiveWaiter");
+        Waiter naughtyWaiter = (Waiter) ctx.getBean("naughtyWaiter");
+        naiveWaiter.greetTo("Panda");
+        naughtyWaiter.greetTo("foo");
     }
 }

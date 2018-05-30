@@ -9,11 +9,10 @@
                             http://www.springframework.org/schema/aop/spring-aop.xsd
                             http://www.springframework.org/schema/context
                             http://www.springframework.org/schema/context/spring-context.xsd">
-
+    <aop:aspectj-autoproxy/>
     <!-- 目标类 -->
-    <bean id="waiter" class="com.aop.aspectjbook.config.NavieWaiter"></bean>
-    <!-- 使用了@AspectJ注解的切面类 -->
-    <bean class="com.aop.aspectjbook.config.PreGreetingAspect"></bean>
-    <!-- 自动代理创建器，自动将@AspectJ注解切面类织入目标Bean中 -->
-    <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"></bean>
+    <bean id="naiveWaiter" class="com.aop.aspectjbook.aspectj_annotation.NaiveWaiter"></bean>
+    <bean id="naughtyWaiter" class="com.aop.aspectjbook.aspectj_annotation.NaughtyWaiter"></bean>
+
+    <bean class="com.aop.aspectjbook.aspectj_annotation.TestAspect"></bean>
 </beans>
